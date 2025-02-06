@@ -1,127 +1,474 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>PDEU</title>
-    <link rel="icon" href=
-        type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandit Deendayal Energy University</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Official page of Pandit Deendayal Energy University. Learn more about departments, courses, faculty, and library.">
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
-            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #f5f5f5;
+            background-color: #f3f4f6;
             color: #333;
+            line-height: 1.6;
         }
-        header {
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(165, 28, 48, 0.4), rgba(165, 28, 48, 0.5)),
+                        url('https://www.highereducationdigest.com/wp-content/uploads/2022/01/10-550x330.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: #00447c;
-            padding: 10px 20px;
-            border-bottom: 5px solid #ff914d;
+            justify-content: center;
+            text-align: center;
             color: white;
+            margin-bottom: 40px;
         }
+
+        /* Add text shadow to improve readability */
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #a51c30, #cc2a3d);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the content */
+            max-width: 1200px;
+            margin: 0 auto;
+            color: white;
+            text-align: center; /* Center the text */
+        }
+
         header img {
-            height: 60px;
+            height: 70px;
+            margin-right: 15px;
         }
-        header .title {
-            flex: 1;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0;
-        }
+
+        /* Navbar */
         nav {
-            background-color: #00447c;
-            padding: 10px 0;
-            text-align: center;
+            background: #8b1726;
+            padding: 15px 0;
+            position: sticky;
+            top: 100px;
+            z-index: 999;
         }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
         nav a {
-            margin: 0 15px;
-            color: #ff914d;
+            color: #ffd700;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
+
         nav a:hover {
-            color: white;
+            background: #ffd700;
+            color: #a51c30;
+            transform: translateY(-2px);
         }
+
+        /* Main Content */
         main {
-            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-        section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
-            color: #00447c;
-            margin-top: 0;
-        }
-        footer {
-            background-color: #00447c;
-            color: white;
-            text-align: center;
-            padding: 10px;
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 40px;
-            border-top: 5px solid #ff914d;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            color: #a51c30;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(45deg, #8b1726, #a51c30);
+            border-radius: 12px;
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background: #a51c30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(45deg, #a51c30, #8b1726);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        #faculty {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #faculty h2 {
+            color: #a51c30;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+        }
+
+        .faculty-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .faculty-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .faculty-card h3 {
+            color: #a51c30;
+            margin-bottom: 10px;
+        }
+
+        .faculty-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="data:image/jpeg;base64,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" alt="PDEU Logo">
-        <h1 class="title">Pandit Deendayal Energy University</h1>
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f1/Pandit_Deendayal_Energy_University_logo.png" alt="PDEU logo">
+            <h1>Pandit Deendayal Energy University</h1>
+        </div>
     </header>
+
     <nav>
-        <a href="#departments">Departments</a>
-        <a href="#courses">Courses</a>
-        <a href="#faculty">Faculty</a>
-        <a href="#library">Library</a>
+        <div class="nav-container">
+            <a href="#about">About</a>
+            <a href="#departments">Departments</a>
+            <a href="#courses">Courses</a>
+            <a href="#faculty">Faculty</a>
+            <a href="#library">Library</a>
+        </div>
     </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to PDEU</h1>
+            <p>Empowering minds, Energizing futures</p>
+        </div>
+    </div>
+
     <main>
-        <section id="introduction">
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Faculty Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Research Labs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Placement</div>
+            </div>
+        </div>
+
+        <section id="about">
             <h2>About PDEU</h2>
-            <p>Pandit Deendayal Energy University (PDEU) is a premier institute dedicated to providing excellence in education, research, and innovation in the fields of energy, engineering, and business management.</p>
+            <p>Pandit Deendayal Energy University (PDEU) is a premier institute dedicated to providing excellence in education, research, and innovation in the fields of energy, engineering, and business management. With state-of-the-art facilities and industry partnerships, we prepare our students for global challenges.</p>
         </section>
-        <section id="departments">
-            <h2>Departments</h2>
-            <ul>
-                <li><strong>School of Technology:</strong> Focus on AI, Data Science, and Renewable Energy.</li>
-                <li><strong>School of Business:</strong> Specializing in Management, Marketing, and Finance.</li>
-                <li><strong>School of Liberal Studies:</strong> Offering courses in Social Sciences and Humanities.</li>
-            </ul>
-        </section>
-        <section id="courses">
-            <h2>Courses</h2>
-            <ul>
-                <li><strong>B.Tech:</strong> Mechanical, Electrical, Computer Science, and more.</li>
-                <li><strong>MBA:</strong> Business Analytics, Finance, and HR.</li>
-                <li><strong>Ph.D. Programs:</strong> Cutting-edge research opportunities.</li>
-            </ul>
-        </section>
-        <section id="faculty">
-            <h2>Faculty</h2>
-            <ul>
-                
-                <li><strong>Dr.Yogesh Kumar:</strong> Department of Computer Science Engineering .</li>
-                <li><strong>Dr.Aarti Solanki:</strong>Department of Information and Communication Technology.</li>
-                <li><strong>Dr.Aditya Shastri:</strong> Department of Computer Science Engineering.</li>
-            </ul>
-        </section>
+
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-image">School of Technology</div>
+                <div class="card-content">
+                    <h3>Programs Offered</h3>
+                    <ul>
+                        <li>Artificial Intelligence & ML</li>
+                        <li>Data Science</li>
+                        <li>Renewable Energy</li>
+                        <li>Computer Engineering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">School of Business</div>
+                <div class="card-content">
+                    <h3>Specializations</h3>
+                    <ul>
+                        <li>Business Analytics</li>
+                        <li>Finance Management</li>
+                        <li>Marketing Strategy</li>
+                        <li>Human Resources</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">School of Liberal Studies</div>
+                <div class="card-content">
+                    <h3>Areas of Study</h3>
+                    <ul>
+                        <li>Social Sciences</li>
+                        <li>Humanities</li>
+                        <li>Public Policy</li>
+                        <li>International Relations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <section id="library">
-            <h2>Library</h2>
-            <p>The PDEU library offers a vast collection of resources, including online databases, e-books, and journals. Study spaces and group rooms are also available.</p>
+            <h2>Library & Resources</h2>
+            <p>The PDEU library is a state-of-the-art facility providing comprehensive academic resources and digital learning materials. Our collection includes:</p>
             <ul>
-                <li><strong>Timings:</strong> Monday-Friday: 8:00 AM - 10:00 PM</li>
-                <li><strong>Online Resources:</strong> Accessible 24/7.</li>
+                <li>Over 50,000 books and journals</li>
+                <li>Digital database subscriptions</li>
+                <li>24/7 online access to e-resources</li>
+                <li>Modern study spaces and discussion rooms</li>
             </ul>
+        </section>
+
+        <section id="faculty">
+            <h2>Our Faculty</h2>
+            <div class="faculty-list">
+                <div class="faculty-card">
+                    <h3>Aarti Solanki</h3>
+                    <p>Department of Information and Communication Technology</p>
+                </div>
+                <div class="faculty-card">
+                    <h3>Abhinav Kumar</h3>
+                    <p>Department of Computer Science and Engineering</p>
+                </div>
+                <div class="faculty-card">
+                    <h3>Dr. Abhishek Joshi</h3>
+                    <p>Department of Information and Communication Technology</p>
+                </div>
+                <div class="faculty-card">
+                    <h3>Dr. Amit Kumar</h3>
+                    <p>Department of Electronics and Communication Engineering</p>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Pandit Deendayal Energy University. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Knowledge Corridor, Raisan</li>
+                    <li>Gandhinagar - 382007</li>
+                    <li>Gujarat, India</li>
+                    <li>Phone: +91-7016420486</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Admissions</li>
+                    <li>Research</li>
+                    <li>Careers</li>
+                    <li>Alumni</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pandit Deendayal Energy University. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
