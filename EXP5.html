@@ -1,0 +1,296 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        fieldset {
+            border: none;
+            margin-top: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            margin-top: 5px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        button {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>📋 Student Feedback Form</h2>
+        <form>
+            <label for="name">👤 Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="email">📧 Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <fieldset>
+                <legend>📊 Course Evaluation:</legend>
+                <div class="options">
+                    <label><input type="radio" name="satisfaction" value="excellent" required> ⭐ Excellent</label>
+                    <label><input type="radio" name="satisfaction" value="good"> 😊 Good</label>
+                    <label><input type="radio" name="satisfaction" value="average"> 😐 Average</label>
+                    <label><input type="radio" name="satisfaction" value="poor"> 😞 Poor</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>📚 Specific Feedback:</legend>
+                <div class="options">
+                    <label><input type="checkbox" name="topics" value="html"> 🔵 HTML</label>
+                    <label><input type="checkbox" name="topics" value="css"> 🟢 CSS</label>
+                    <label><input type="checkbox" name="topics" value="javascript"> 🟡 JavaScript</label>
+                </div>
+
+                <label for="improvement">🔍 Areas for Improvement:</label>
+                <select id="improvement" name="improvement">
+                    <option value="content">📖 Content Quality</option>
+                    <option value="presentation">🎤 Presentation</option>
+                    <option value="examples">📝 More Examples</option>
+                </select>
+            </fieldset>
+
+            <label for="comments">💬 Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Write your feedback here..."></textarea>
+
+            <button type="submit">🚀 Submit Feedback</button>
+        </form>
+    </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 600px;
+            text-align: left;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        button {
+            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #ff7eb3, #ff758c);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📋 Student Feedback Form</h2>
+        <form>
+            <label for="name">👤 Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+            
+            <label for="email">📧 Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+            
+            <label>📊 Course Evaluation:</label>
+            <div class="options">
+                <label><input type="radio" name="satisfaction" value="excellent"> ⭐ Excellent</label>
+                <label><input type="radio" name="satisfaction" value="good"> 😊 Good</label>
+                <label><input type="radio" name="satisfaction" value="average"> 😐 Average</label>
+                <label><input type="radio" name="satisfaction" value="poor"> 😞 Poor</label>
+            </div>
+            
+            <label>📚 Specific Feedback:</label>
+            <div class="options">
+                <label><input type="checkbox" name="topics" value="html"> 🔵 HTML</label>
+                <label><input type="checkbox" name="topics" value="css"> 🟢 CSS</label>
+                <label><input type="checkbox" name="topics" value="javascript"> 🟡 JavaScript</label>
+            </div>
+            
+            <label for="improvement">🔍 Areas for Improvement:</label>
+            <select id="improvement" name="improvement">
+                <option value="content">📖 Content Quality</option>
+                <option value="presentation">🎤 Presentation</option>
+                <option value="examples">📝 More Examples</option>
+            </select>
+            
+            <label for="comments">💬 Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Write your feedback here..."></textarea>
+            
+            <button type="submit">🚀 Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

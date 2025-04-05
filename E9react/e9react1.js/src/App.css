@@ -1,0 +1,102 @@
+/* App.css */
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* Deep Blue Gradient */
+  color: white;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Counter Box - Neon Effect */
+.counter-container {
+  background: rgba(0, 0, 0, 0.85); /* Dark Black Box */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+  width: 400px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00e6e6; /* Neon Cyan */
+}
+
+.count-display {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #00ffcc; /* Bright Green */
+}
+
+/* Step Size Input */
+.step-control {
+  margin: 20px 0;
+}
+
+.step-control label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00; /* Gold */
+}
+
+.step-control input {
+  width: 70px;
+  padding: 6px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #222;
+  color: #00ffcc; /* Neon Green */
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  border: none;
+  padding: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* Button Colors */
+.increment {
+  background: #00e676;  /* Neon Green */
+  color: black;
+}
+
+.decrement {
+  background: #ff3d00;  /* Bright Red */
+  color: white;
+}
+
+.reset {
+  background: #2196f3;  /* Bright Blue */
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}

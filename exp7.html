@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Feedback Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #85C1E9, #1F3A6E); /* Blue gradient background */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff; /* White background for the form */
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #1F3A6E; /* Dark blue border */
+        }
+
+        .form-label, h2 {
+            font-weight: bold;
+            color: #1F3A6E; /* Dark blue color for labels */
+        }
+
+        .form-control {
+            background-color: #f5f9ff; /* Light blue background for form fields */
+            border: 1px solid #1F3A6E; /* Dark blue border */
+            color: #1F3A6E; /* Dark blue text */
+        }
+
+        .form-control[type="file"]::-webkit-file-upload-button {
+            background-color: #1F3A6E; /* Dark blue button */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-control[type="file"]::-webkit-file-upload-button:hover {
+            text-decoration: underline;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+        }
+
+        .stars span {
+            font-size: 40px;
+            cursor: pointer;
+            color: #1F3A6E; /* Dark blue stars */
+            transition: color 0.3s;
+        }
+
+        .stars span.default {
+            color: #1F3A6E;
+        }
+
+        .feedback-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #1F3A6E; /* Dark blue text for feedback message */
+        }
+
+        .btn-preview {
+            display: block;
+            margin: 20px auto;
+            background-color: #85C1E9; /* Light blue button */
+            color: #ffffff;
+            border-radius: 7px;
+            border-width: 2px;
+            border-color: #1F3A6E;
+            text-align: center;
+        }
+
+        .btn-preview:hover {
+            text-decoration: underline;
+            background-color: #1F3A6E; /* Dark blue hover effect */
+            border-radius: 7px;
+            border-width: 2px;
+            border-color: #1F3A6E;
+        }
+
+        .img-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Product Feedback Form</h2>
+        <form id="feedbackForm">
+            <div class="mb-5">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-5">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-5">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-5">
+                <label class="form-label">Product Review</label>
+                <textarea class="form-control" id="review" rows="3" required></textarea>
+            </div>
+            <div class="mb-5">
+                <label class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="imageUpload" accept="image/*">
+            </div>
+            <div class="mb-5">
+                <label class="form-label">Overall Review</label>
+                <div class="stars" id="starRating">
+                    <span data-value="1" class="default">&#9733;</span>
+                    <span data-value="2" class="default">&#9733;</span>
+                    <span data-value="3" class="default">&#9733;</span>
+                    <span data-value="4" class="default">&#9733;</span>
+                    <span data-value="5" class="default">&#9733;</span>
+                </div>
+                <input type="hidden" id="rating" value="0">
+                <p class="feedback-message" id="feedbackMessage"></p>
+            </div>
+            <button type="button" class="btn btn-primary btn-preview" onclick="previewData()">Preview</button>
+        </form>
+        <div class="mt-5 preview-container">
+            <center>
+                <h2>Details you filled:</h2>
+            </center>
+            <p><strong>Name:</strong> <span id="previewName"></span></p>
+            <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="previewPhone"></span></p>
+            <p><strong>Review:</strong> <span id="previewReview"></span></p>
+            <p><strong>Rating:</strong> <span id="previewRating"></span></p>
+            <img id="previewImage" class="img-preview" style="display: none;">
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll(".stars span").forEach(star => {
+            star.addEventListener("mouseover", function() {
+                let value = this.getAttribute("data-value");
+                document.querySelectorAll(".stars span").forEach(s => {
+                    s.style.color = s.getAttribute("data-value") <= value ? "black" : "#1F3A6E";
+                });
+            });
+            star.addEventListener("click", function() {
+                let value = this.getAttribute("data-value");
+                document.getElementById("rating").value = value;
+                document.querySelectorAll(".stars span").forEach(s => {
+                    s.classList.toggle("active", s.getAttribute("data-value") <= value);
+                });
+                updateFeedbackMessage();
+            });
+        });
+
+        function updateFeedbackMessage() {
+            let rating = document.getElementById("rating").value;
+            let feedbackMessage = "";
+            
+            switch (rating) {
+                case "1": feedbackMessage = "Oh, we are sorry. We will try to improve it."; break;
+                case "2": feedbackMessage = "We appreciate your feedback and will work on it."; break;
+                case "3": feedbackMessage = "Thank you! We will strive to do better."; break;
+                case "4": feedbackMessage = "Great! We are glad you liked it."; break;
+                case "5": feedbackMessage = "Awesome! We are thrilled that you loved it!"; break;
+            }
+            document.getElementById("feedbackMessage").innerText = feedbackMessage;
+        }
+
+        function previewData() {
+            document.getElementById("previewName").innerText = document.getElementById("name").value;
+            document.getElementById("previewEmail").innerText = document.getElementById("email").value;
+            document.getElementById("previewPhone").innerText = document.getElementById("phone").value;
+            document.getElementById("previewReview").innerText = document.getElementById("review").value;
+            document.getElementById("previewRating").innerText = document.getElementById("rating").value + ' Stars';
+            
+            let file = document.getElementById("imageUpload").files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("previewImage").src = e.target.result;
+                    document.getElementById("previewImage").style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
